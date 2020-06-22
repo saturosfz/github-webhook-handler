@@ -89,9 +89,9 @@ function create (initOptions) {
       callback(err)
     }
 
-    const sig = req.headers['x-hub-signature']
-    const event = req.headers['x-github-event']
-    const id = req.headers['x-github-delivery']
+    const sig = req.headers['X-Gitee-Token']
+    const event = req.headers['X-Gitee-Timestamp']
+    const id = req.headers['X-Gitee-Event']
 
     if (!sig) {
       return hasError('No X-Hub-Signature found on request')
